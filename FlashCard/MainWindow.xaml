@@ -1,0 +1,58 @@
+﻿ <!--///A. Seun Ajayi
+///AjayiP8
+///8/7/2022
+///aajayi@cnm.edu-->
+    
+    <Window x:Class="FlashCard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlashCard"
+        mc:Ignorable="d"
+        Title="Super Flash Card Mania 3000" Height="525" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="tabControl" Margin="0,0,0,-8" Grid.RowSpan="2">
+            <TabItem Header="Flash Cards" Height="22" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5" Height="449">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="24*"/>
+                        <ColumnDefinition Width="373*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="Lb_CardID" Content="" HorizontalAlignment="Left" Margin="34,2,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.362,0.445" Grid.ColumnSpan="2" Width="32"/>
+                    <TextBox x:Name="Tx_Title" HorizontalAlignment="Left" Margin="122,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="491" Height="22" Grid.Column="1"/>
+                    <Label x:Name="LbQuestion" Content="Question" HorizontalAlignment="Left" Margin="45,41,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txQuestion" HorizontalAlignment="Left" Margin="45,67,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" Height="85" Grid.Column="1"/>
+                    <Button x:Name="btn_Show" Content="Show Answer" HorizontalAlignment="Left" Margin="266,178,0,0" VerticalAlignment="Top" Height="38" Width="160" Click="btn_Show_Click" Grid.Column="1"/>
+                    <Label x:Name="LbAnswer" Content="Answer" HorizontalAlignment="Right" Margin="0,203,652,0" Height="26" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txAnswer" HorizontalAlignment="Left" Margin="45,235,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="640" Height="85" Grid.Column="1"/>
+                    <Button x:Name="btn_Right" Content="Right" HorizontalAlignment="Left" Margin="210,334,0,0" VerticalAlignment="Top" Height="30" Width="106" IsEnabled="False" Click="btn_Right_Click" Grid.Column="1"/>
+                    <Button x:Name="btn_Wrong" Content="Wrong" HorizontalAlignment="Left" Margin="418,334,0,0" VerticalAlignment="Top" Height="30" Width="106" IsEnabled="False" Click="btn_Wrong_Click" Grid.Column="1"/>
+                    <TextBox x:Name="tx_Display" HorizontalAlignment="Left" Margin="10,372,0,16" Text="Think about the answer then click Show Answer button. " TextWrapping="Wrap" Width="760" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Manage Cards">
+                <Grid Background="#FFE5E5E5" Height="443">
+                    <ListBox x:Name="cards" ItemsSource="{Binding Cards}" SelectionChanged="cards_SelectionChanged" HorizontalAlignment="Left" Width="397" Height="311" VerticalAlignment="Top" Margin="397,4,0,0"/>
+                    <TextBox x:Name="title" HorizontalAlignment="Left" Margin="24,70,0,0" TextWrapping="Wrap" Text="{Binding CardTitle, Mode=TwoWay}" VerticalAlignment="Top" Width="162" Height="22"/>
+                    <TextBox x:Name="question" HorizontalAlignment="Left" Margin="24,121,0,0" TextWrapping="Wrap" Text="{Binding Question, Mode=TwoWay}" VerticalAlignment="Top" Width="270" Height="83"/>
+                    <TextBox x:Name="answer" HorizontalAlignment="Left" Margin="29,234,0,0" TextWrapping="Wrap" Text="{Binding Answer, Mode=TwoWay}" VerticalAlignment="Top" Width="270" Height="83"/>
+                    <Button x:Name="addCard" Content="Add" HorizontalAlignment="Left" Margin="192,332,0,0" VerticalAlignment="Top" Click="addCard_Click" Width="76" Height="32"/>
+                    <Label x:Name="label" Content="Title" HorizontalAlignment="Left" Margin="24,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.418,0.846"/>
+                    <Label x:Name="label_Copy" Content="Question" HorizontalAlignment="Left" Margin="24,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.418,0.846"/>
+                    <Label x:Name="label_Copy1" Content="Answer" HorizontalAlignment="Right" Margin="0,211,712,0" VerticalAlignment="Top" RenderTransformOrigin="0.418,0.846"/>
+                    <Label x:Name="label_CardID" Content="{Binding CardID, Mode=TwoWay}" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.418,0.846"/>
+                    <TextBox x:Name="answer_Copy" HorizontalAlignment="Left" Margin="12,373,0,0" TextWrapping="Wrap" Text="{Binding Answer, Mode=TwoWay}" VerticalAlignment="Top" Width="766" Height="57"/>
+                    <Button x:Name="btn_Update" Content="Update" HorizontalAlignment="Left" Margin="300,332,0,0" VerticalAlignment="Top" Height="32" Width="70" Click="btn_Update_Click"/>
+                    <Button x:Name="btn_Remove" Content="Remove" HorizontalAlignment="Left" Margin="397,332,0,0" VerticalAlignment="Top" Height="32" Width="90" Click="btn_Remove_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
