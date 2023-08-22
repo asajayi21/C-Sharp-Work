@@ -1,0 +1,26 @@
+﻿<!--/*A. Seun Ajayi
+ * aajayi@cnm.edu
+ * AjayiP7.cs
+ * 07/31/2022
+ */-->
+<Window x:Class="TextBasedAdventureGame.TravelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Text Based Adventure Game" Height="525" Width="862.329">
+    <Grid>
+        <TextBlock x:Name="txbLocationDescription" HorizontalAlignment="Left" Height="54" Margin="32,53,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="461"/>
+        <ListBox x:Name="lbTraveOptions" HorizontalAlignment="Left" Height="100" Margin="33,283,0,0" VerticalAlignment="Top" Width="312" MouseDoubleClick="lbTraveOptions_MouseDoubleClick"/>
+        <Label Content="Click on an option to travel in that direction:" HorizontalAlignment="Left" Margin="32,252,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Lbl_MapLocation" Content="Location Description:" HorizontalAlignment="Left" Margin="32,22,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="406,164,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnTake" Content="Take --&gt;" HorizontalAlignment="Left" Margin="406,201,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnDrop" Content="&lt;-- Drop" HorizontalAlignment="Left" Margin="406,237,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox HorizontalAlignment="Left" Height="223" Margin="556,123,0,0" VerticalAlignment="Top" Width="244"/>
+        <Label x:Name="Lbl_Inventory" Content="Inventory: Select item to drop" HorizontalAlignment="Left" Margin="556,82,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="63" Margin="33,421,0,0" VerticalAlignment="Top" Width="767"/>
+        <Label x:Name="Lbl_Status" Content="Game Status:" HorizontalAlignment="Left" Margin="32,390,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbGameObject" HorizontalAlignment="Left" Height="100" Margin="33,131,0,0" VerticalAlignment="Top" Width="312" MouseDoubleClick="lbTraveOptions_MouseDoubleClick"/>
+        <Label Content="Select an item to search or take." HorizontalAlignment="Left" Margin="32,100,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
